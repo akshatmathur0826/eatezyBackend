@@ -47,4 +47,10 @@ public class ControllerUserdetails {
 			return ResponseEntity.ok("Invalid EmailID or Passcode");
 		}
 	}
+	@GetMapping(value="/showData")
+	public String showData()
+	{
+		System.out.println("Hello World");
+		return "Hello";
+	}
 }
