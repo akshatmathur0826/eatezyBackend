@@ -1,5 +1,7 @@
 package com.example.foodorderingapp.userdetails;
 
+import java.util.List;
+
 //import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +35,12 @@ public class ServiceUserdetails {
 	public Userdetails getFullUserDetails(String loginid) {
 		//Optional<Userdetails> ud = repositoryUserdetails.findById(loginid)
 		return repositoryUserdetails.findById(loginid).orElse(null);
+	}
+
+
+	public List<Userdetails> showData() {
+		// TODO Auto-generated method stub
+		return repositoryUserdetails.showData();
+		//return null;
 	}
 }

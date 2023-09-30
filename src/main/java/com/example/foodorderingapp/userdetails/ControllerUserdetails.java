@@ -1,5 +1,7 @@
 package com.example.foodorderingapp.userdetails;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -48,9 +50,10 @@ public class ControllerUserdetails {
 		}
 	}
 	@GetMapping(value="/showData")
-	public String showData()
+	public List<Userdetails> showData()
 	{
 		System.out.println("Hello World");
-		return "Hello";
+		return serviceUserdetails.showData();
+		//return "Hello";
 	}
 }

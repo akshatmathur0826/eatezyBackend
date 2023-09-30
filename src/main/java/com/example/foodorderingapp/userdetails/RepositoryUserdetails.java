@@ -1,5 +1,7 @@
 package com.example.foodorderingapp.userdetails;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 //import org.springframework.data.jpa.repository.query.Procedure;
@@ -22,5 +24,8 @@ public interface RepositoryUserdetails extends JpaRepository<Userdetails,String>
 			@Param("email") String email,
 	        @Param("password") String password
 	        );
+
+	@Query(value = "SELECT * from userdetails", nativeQuery = true)
+	List<Userdetails> showData();
 
 }
