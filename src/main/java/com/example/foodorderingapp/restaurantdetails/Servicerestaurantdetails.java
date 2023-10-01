@@ -36,7 +36,7 @@ public class Servicerestaurantdetails {
 		for(int i=0;i<imageMetaData.size();i++)
 		{
 			System.out.println("imageMetaData inside for loop: "+imageMetaData.get(i));
-			File file = new File("C:/reactjs/foodorderingapp/src/images/"+imageMetaData.get(i));
+			File file = new File("/foodorderingapp/images/"+imageMetaData.get(i));
 			BufferedImage originalImage=ImageIO.read(file);
 	        ByteArrayOutputStream baos=new ByteArrayOutputStream();
 	        ImageIO.write(originalImage, "jpg", baos );
