@@ -37,7 +37,9 @@ public class Servicerestaurantdetails {
 		for(int i=0;i<imageMetaData.size();i++)
 		{
 			System.out.println("imageMetaData inside for loop: "+imageMetaData.get(i));
-			URL resourceUrl = getClass().getResource("/images/" + imageMetaData.get(i));
+			URL resourceUrl = getClass().getClassLoader().getResource("BOOT-INF/classes/images/" + imageMetaData.get(i));
+
+			//URL resourceUrl = getClass().getResource("/images/" + imageMetaData.get(i));
 			System.out.println("Resource URL: " + resourceUrl);
 			//File file = new File("/foodorderingapp/images/"+imageMetaData.get(i));
 			//BufferedImage originalImage=ImageIO.read(getClass().getResource("/images/"+imageMetaData.get(i)));
