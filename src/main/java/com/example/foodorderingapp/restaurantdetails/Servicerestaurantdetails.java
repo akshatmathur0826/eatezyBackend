@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,8 +37,11 @@ public class Servicerestaurantdetails {
 		for(int i=0;i<imageMetaData.size();i++)
 		{
 			System.out.println("imageMetaData inside for loop: "+imageMetaData.get(i));
+			URL resourceUrl = getClass().getResource("/images/" + imageMetaData.get(i));
+			System.out.println("Resource URL: " + resourceUrl);
 			//File file = new File("/foodorderingapp/images/"+imageMetaData.get(i));
-			BufferedImage originalImage=ImageIO.read(getClass().getResource("/foodorderingapp/images/"+imageMetaData.get(i)));
+			//BufferedImage originalImage=ImageIO.read(getClass().getResource("/images/"+imageMetaData.get(i)));
+			BufferedImage originalImage=ImageIO.read(resourceUrl);
 			System.out.println(originalImage);
 			//BufferedImage originalImage=ImageIO.read(file);
 	        ByteArrayOutputStream baos=new ByteArrayOutputStream();
